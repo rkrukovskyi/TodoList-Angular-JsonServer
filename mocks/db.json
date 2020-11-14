@@ -1,0 +1,32 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "name": "Be happy",
+      "description": "All people should be happy",
+      "createdAt": "01.01.01",
+      "editedAt": "01.01.01"
+    },
+    {
+      "id": 2,
+      "name": "Smile",
+      "description": "All people should smile",
+      "createdAt": "01.01.01",
+      "editedAt": "01.01.01"
+    },
+    {
+      "id": 3,
+      "name": "Dream",
+      "description": "All people should dream",
+      "createdAt": "01.01.01",
+      "editedAt": "01.01.01"
+    }
+  ],
+
+  "user": [
+    {
+      "id": 1,
+      "name": "Alice"
+    }
+  ]
+}
