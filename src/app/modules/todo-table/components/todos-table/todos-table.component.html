@@ -1,1 +1,45 @@
-<p>todos-table works!</p>
+<p>Table of Todos</p>
+<mat-table [dataSource]="todos" class="mat-elevation-z8">
+  <!-- Id Column -->
+  <ng-container matColumnDef="Number">
+    <mat-header-cell *matHeaderCellDef> Number </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+  </ng-container>
+
+  <!-- Title Column -->
+  <ng-container matColumnDef="Title">
+    <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="CreationDate">
+    <mat-header-cell *matHeaderCellDef> Creation Date </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.createdAt}} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="EditDate">
+    <mat-header-cell *matHeaderCellDef> Edit Date </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.editedAt}} </mat-cell>
+  </ng-container>
+
+  <!-- Edit -->
+  <ng-container matColumnDef="Edit">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> EDIT </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary" (click)="getEditEl(element.name)">EDIT</button>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Delete -->
+  <ng-container matColumnDef="Delete">
+    <mat-header-cell mat-header-cell *matHeaderCellDef> DELETE </mat-header-cell>
+    <mat-cell mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary" (click)="getDeleteEl(element.name)">DELETE</button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
